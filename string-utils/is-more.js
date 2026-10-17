@@ -5,8 +5,7 @@ export function isMore(a, b) {
     if (typeof b !== 'string') {
         throw new TypeError('Аргумент должен быть строкой!')
     }
-    let i = 0;
-    for (; a[i] !== undefined || b[i] !== undefined; i++) {
+    for (let i = 0; a[i] !== undefined || b[i] !== undefined; i++) {
 
         if (a[i] === undefined) return false;
         if (b[i] === undefined) return true;
