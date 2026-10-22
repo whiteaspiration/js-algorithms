@@ -1,3 +1,5 @@
+import { len } from './len.js';
+
 export function endsWith(str, search) {
     if (typeof str !== 'string') {
         throw new TypeError('Первый аргумент должен быть строкой');
@@ -6,8 +8,8 @@ export function endsWith(str, search) {
         throw new TypeError('Второй аргумент должен быть строкой');
     }
 
-    const strLen = str.length;
-    const searchLen = search.length;
+    const strLen = len(str);
+    const searchLen = len(search);
 
     if (searchLen > strLen) {
         return false;
