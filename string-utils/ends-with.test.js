@@ -19,7 +19,7 @@ describe('endsWith', () => {
     });
 
     test('должна вернуть false если поисковая строка длиннее', () => {
-        expect(endsWith('hell', 'hello')).toBe(false);
+        expect(endsWith('llo', 'hello')).toBe(false);
     });
 
     test('должна вернуть true для точного совпадения', () => {
