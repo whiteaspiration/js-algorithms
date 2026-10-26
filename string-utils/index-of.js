@@ -19,22 +19,22 @@ export function indexOf(str, search) {
         return -1;
     }
 
-    const maxIndex = strLen - searchLen; //
+    const maxIndex = strLen - searchLen;
 
-    // внешний цикл: двигает окно по главной строке
+    // Внешний цикл: двигает окно поиска по главной строке
     for (let i = 0; i <= maxIndex; i++) {
         let found = true;
 
-        // внутренний цикл: проверяет буквы внутри окна
+        // Внутренний цикл
         for (let j = 0; j < searchLen; j++) {
             if (str[i + j] !== search[j]) {
                 found = false;
-                break;
+                break; // 
             }
         }
-g
+
         if (found) {
-            return i;
+            return i; 
         }
     }
 
