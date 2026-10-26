@@ -1,3 +1,5 @@
+import { len } from './len.js';
+
 export function indexOf(str, search) {
     if (typeof str !== 'string') {
         throw new TypeError('Первый аргумент должен быть строкой');
@@ -10,23 +12,27 @@ export function indexOf(str, search) {
         return 0;
     }
 
-    const strLen = str.length;
-    const searchLen = search.length;
+    const strLen = len(str);
+    const searchLen = len(search);
 
     if (searchLen > strLen) {
         return -1;
     }
-     // внешний цикл: двигает окно по главной строке
-    for (let i = 0; i <= strLen - searchLen; i++) {
+
+    const maxIndex = strLen - searchLen; //
+
+    // внешний цикл: двигает окно по главной строке
+    for (let i = 0; i <= maxIndex; i++) {
         let found = true;
 
-             // внутренний цикл: проверяет буквы внутри окна
+        // внутренний цикл: проверяет буквы внутри окна
         for (let j = 0; j < searchLen; j++) {
             if (str[i + j] !== search[j]) {
                 found = false;
-                break; // если буква не совпала, прерываем проверку этого окна
+                break;
             }
         }
+g
         if (found) {
             return i;
         }
